@@ -23,6 +23,7 @@
   --nav-font : "Raleway", serif;
   --heading : "Nunito", serif;
   --tag-heading : "Raleway", serif;
+  --content : "Varela Round", serif;
 
   /* font-family: "Yeseva One", serif;
   font-family: "Raleway", serif;
@@ -54,6 +55,10 @@ a{
   color: #E52333;
 }
 
+.highlight-text{
+  color: var(--orange-color);
+  font-weight: 700;
+}
 
 /* !================================================================ */
 /* !Banner */
@@ -112,7 +117,7 @@ a{
 }
 .banner-wrapper .navbar .nav-items .nav-item{
   list-style: none;
-  padding: 6px 16px;
+  padding: 6px 14px;
   margin-top: 4px;
   width: fit-content;
   transition: all 0.2 ease-in-out;
@@ -433,4 +438,276 @@ a{
   .side-nav .side-nav-container{
     max-width: 320px ;
   } 
+}
+
+
+/* !================================================================ */
+/* !About */
+.about-wrapper {
+  width: 100%;
+  position: relative;
+}
+
+.about-wrapper .about-container{
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.about-wrapper .about-container .left-col {
+  position: relative;
+  width: 100%; 
+  min-height: 500px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-wrapper .about-container .right-col .heading{
+  font-size: 36px;
+  font-family: var(--heading);
+  color: var(--orange-color);
+}
+.about-wrapper .about-container .right-col .sub-heading{
+  font-size: 24px;
+  font-family: var(--white-color);
+  color: #000;
+}
+.about-wrapper .about-container .right-col .content{
+  font-size: 17px;
+  word-spacing: 2px;
+  font-family: var(--content);
+  font-weight: 300;
+  color: var(--brown-color);
+}
+
+/* ?Animation */
+.about-wrapper .zoom {
+  transform: scale(0.3);
+  transition: transform 0.5s ease-in-out;
+}
+.about-wrapper .zoom.visible {
+  transform: scale(1);
+}
+.about-wrapper .up {
+  opacity: 0;
+  transform: translateY(50%);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+.about-wrapper .up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* ?Animation */
+
+
+/* !================================================================ */
+/* !About - Media Query */
+@media screen and (max-width : 992px){
+  
+}
+
+@media screen and (max-width : 768px){
+
+}
+
+@media screen and (max-width : 576px){
+  .about-wrapper .about-container .left-col {
+    min-height: auto; 
+  }
+  .about-wrapper .about-container .right-col .heading{
+    font-size: 30px;
+  }
+  .about-wrapper .about-container .right-col .sub-heading{
+    font-size: 22px;
+  }
+  .about-wrapper .about-container .right-col .content{
+    font-size: 16px;
+  }
+}
+
+
+/* !================================================================ */
+/* !Popular */
+.popular-wrapper{
+  width: 100%;
+  padding-bottom: 40px;
+}
+
+.popular-wrapper .popular-container .section-title{
+  font-family: var(--tag-heading);
+  font-size: 28px;
+  font-weight: 500;
+  color: var(--orange-color);
+}
+
+.popular-wrapper .popular-container .row .custom-card {
+  position: relative;
+  border: none;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  /* transition: all 0.2s ease-in-out; */
+  cursor: pointer;
+}
+.popular-wrapper .popular-container .row .custom-card:hover{
+  transform: translateY(-2px);
+}
+
+/* ?Animation */
+.custom-card {
+  transform: scale(0.8);
+  opacity: 0;
+  transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+}
+.custom-card.show {
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* ?Animation */
+
+.popular-wrapper .popular-container .row .custom-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+/* Curved Bottom Edge */
+.custom-card .card-body {
+  text-align: center;
+  padding: 14px;
+  padding-top: 10px;
+  position: relative;
+  z-index: 2;
+}
+
+.custom-card .card-body::before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: 0;
+  width: 100%;
+  height: 22px;
+  background: white;
+  border-radius: 100% 100% 0 0;
+  z-index: 0;
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 4px;
+  font-family: var(--nav-font);
+  transition: all 0.2s ease-in-out;
+}
+
+.popular-wrapper .popular-container .row .custom-card:hover .card-title{
+  color: var(--orange-color);
+}
+
+
+/* !================================================================ */
+/* !Popular - Media Query */
+@media screen and (max-width : 992px){
+  
+}
+
+@media screen and (max-width : 768px){
+
+}
+
+@media screen and (max-width : 576px){
+
+}
+
+
+/* !================================================================ */
+/* !Achievements */
+.Achievement-wrapper {
+  width: 100%;
+  background-color: #fcf6ee;
+}
+
+.Achievement-wrapper .Achievement-container {
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+
+.Achievement-wrapper .Achievement-container .section-title{
+  font-family: var(--tag-heading);
+  font-size: 28px;
+  font-weight: 500;
+  color: var(--orange-color);
+}
+
+.Achievement-wrapper .Achievement-container .image-section .img-fluid {
+  box-shadow: inset 0 4px 8px rgba(255, 255, 255, 0.9),
+    0 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+}
+
+.Achievement-wrapper .content-section .content {
+  margin-bottom: 26px;
+}
+
+.Achievement-wrapper .content-section .content .achievement-count {
+  font-family: var(--content);
+  color: var(--orange-color);
+  font-size: 42px;
+  font-weight: 500;
+  word-spacing: 5px;
+}
+
+.Achievement-wrapper .content-section .content .achievement-content {
+  font-family: var(--tag-heading);
+  color: #000;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.Achievement-wrapper .Achievement-container .content-section {
+  position: relative;
+}
+
+
+/* !================================================================ */
+/* !Achievements - Media Query */
+@media screen and (max-width: 1400px) {
+  .Achievement-wrapper .section-heading {
+    font-size: 44px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .Achievement-wrapper .section-heading {
+    font-size: 40px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .Achievement-wrapper .section-heading {
+    font-size: 32px;
+  }
+  .Achievement-wrapper .content-section .content .achievement-count {
+    font-size: 36px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .Achievement-wrapper .Achievement-container {
+    padding-top: 50px;
+    padding-bottom: 0px;
+  }
+  .Achievement-wrapper .section-desc {
+    font-size: 17px;
+  }
+  .Achievement-wrapper .content-section .content .achievement-count {
+    font-size: 32px;
+  }
+  .Achievement-wrapper .content-section .content .achievement-content {
+    font-size: 16px;
+  }
 }
