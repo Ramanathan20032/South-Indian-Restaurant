@@ -767,29 +767,25 @@ a{
   width: 90%; 
   height: 100%;
   background: linear-gradient(rgba(0, 0, 0, 0.5), var(--orange-color));
-  opacity: 0;
+  opacity: 0.5;
   transition: opacity 0.5s;
   transform: translateX(-50%); 
   border-radius: 7px; 
   cursor: pointer;
 }
 
-.features-wrapper .features-container .single-service:hover .overlay {
-  opacity: 0.2;
-}
-
 .features-wrapper .features-container .service-desc {
   position: absolute;
-  bottom: 0;
+  bottom: 40%;
   left: 50%;
   transform: translateX(-50%);
   width: 80%;
-  opacity: 0;
+  opacity: 1;
   transition: bottom 0.5s, opacity 0.5s;
 }
 
 .features-wrapper .features-container .service-desc hr {
-  background: #fff;
+  background: var(--white-color);
   height: 2px;
   border: 0;
   margin: 15px auto;
@@ -800,10 +796,10 @@ a{
   font-size: 26px;
 }
 
-.features-wrapper .features-container .single-service:hover .service-desc {
+/* .features-wrapper .features-container .single-service:hover .service-desc {
   bottom: 40%;
   opacity: 1;
-}
+} */
 
 /* content */
 .features-wrapper .features-section{
@@ -849,4 +845,170 @@ a{
 }
 
 
+/* !================================================================ */
+/* !Taste */
+.taste-wrapper{
+  width: 100%;
+}
 
+.taste-wrapper .taste-container{
+  padding-top: 20px;
+  padding-bottom: 50px;
+}
+.taste-wrapper .taste-container .section-title{
+  font-family: var(--tag-heading);
+  font-size: 28px;
+  font-weight: 500;
+  color: var(--orange-color);
+}
+
+.taste-wrapper .taste-container .row .col-12{
+  margin-bottom: 15px;
+}
+
+.taste-wrapper .taste-container .row .card{
+  background-color: #FF9800;
+  width: 100%;
+  max-width: 350px; 
+  height: 320px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.taste-wrapper .taste-container .row .card .card-body{
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.taste-wrapper .taste-container .row .card .title{
+  color: var(--white-color);
+  font-family: var(--nav-font);
+  text-align: center;
+}
+
+.taste-wrapper .taste-container .row .card .content{
+  font-family: var(--tag-heading);
+  color: #000;
+  font-size: 18px;
+  word-spacing: 2px;
+  text-align: center;
+}
+
+/* !================================================================ */
+/* !Tastes - Media Query*/
+@media screen and (max-width: 992px) {
+  .taste-wrapper .taste-container .row .card{
+    height: 250px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+
+}
+
+@media screen and (max-width: 576px) {
+  .taste-wrapper .taste-container .row .card{
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+  .taste-wrapper .taste-container .row .card .card-body{
+    padding: 20px;
+  }
+  .taste-wrapper .taste-container .row .col-12{
+    margin-bottom: 20px;
+  }
+}
+
+
+/* !================================================================ */
+/* !Event - Media Query*/
+.event-wrapper{
+  width: 100%;
+}
+
+.event-wrapper .event-container{
+  padding-top: 20px;
+  padding-bottom: 50px;
+}
+.event-wrapper .event-container .section-title{
+  font-family: var(--tag-heading);
+  font-size: 28px;
+  font-weight: 500;
+  color: var(--orange-color);
+}
+
+.event-wrapper .card {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3);
+  background: #fff;
+  margin-bottom: 20px;
+}
+
+.event-wrapper .card-img-container {
+  position: relative;
+}
+
+.event-wrapper .card-img-top {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px 12px 0 0;
+}
+
+.event-wrapper .date-badge {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  background: #f4a52c;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  padding: 8px;
+  border-radius: 8px;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.event-wrapper .card-body {
+  padding: 15px;
+}
+
+.event-wrapper .category {
+  font-size: 14px;
+  color: #FF9800;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.event-wrapper .card-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.event-wrapper .card-text {
+  font-size: 14px;
+  color: #666;
+}
+
+
+/* !================================================================ */
+/* !Event - Media Query*/
+@media screen and (max-width: 992px) {
+  
+}
+
+@media screen and (max-width: 768px) {
+
+}
+
+@media screen and (max-width: 576px) {
+  
+}
