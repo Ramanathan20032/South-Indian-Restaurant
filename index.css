@@ -47,6 +47,39 @@
   font-family: var(--primary-font);
 }
 
+
+/* Scrollbar Width */
+::-webkit-scrollbar {
+  width: 10px; 
+}
+
+/* Scrollbar Track */
+::-webkit-scrollbar-track {
+  background: linear-gradient(180deg, var(--black-color) 40%, #FF9800 100%);
+  border-radius: 8px;
+}
+
+/* Scrollbar Thumb */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, var(--orange-color), var(--orange-color));
+  border-radius: 8px;
+  box-shadow: inset 0 0 5px rgba(255, 152, 0, 0.9);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Scrollbar Thumb Hover Effect */
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, var(--orange-color), var(--orange-color));
+  box-shadow: 0 0 8px rgba(255, 152, 0, 0.9);
+  transform: scale(1.1);
+}
+
+/* Scrollbar Corner */
+::-webkit-scrollbar-corner {
+  background-color: var(--black-color);
+}
+
+
 a{
   text-decoration: none;
 }
