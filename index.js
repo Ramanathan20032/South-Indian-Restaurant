@@ -180,3 +180,97 @@ document.addEventListener("DOMContentLoaded", () => {
     observer.observe(counter);
   });
 });
+
+
+// !--------------------------------------------------------------------------------
+// Testimonial Section
+document.addEventListener('DOMContentLoaded', function () {
+  const testimonials = [
+    {
+        content: `Absolutely the best South-Indian restaurant in New Jersey! The mini-tiffin and appams are fantastic. A must-visit if you're near Edison. 
+                  The service is super fast and efficient. The ambience is lovely, and the food tastes incredible. Highly recommend this place!`,
+        name: `Shravankumar Hiregoudar`
+    },
+    {
+        content: `Incredible South-Indian flavors! The food quality, taste, and service are outstanding. Even with a full house, our meals were served quickly. 
+                  Special thanks to Rajesh for his polite and prompt service. A2B is deserving of five stars. Will surely visit again for a great meal.`,
+        name: `Suhas Biwalkar`
+    },
+    {
+        content: `This place is fantastic! They offer a huge variety of dishes, and everything is delicious. You can even choose your spice level. 
+                  I personally love their Indochinese selection. If you’re looking for great food, I highly recommend this restaurant to everyone.`,
+        name: `Om Sonani`
+    }
+];
+
+  const contentElement = document.querySelector('.testimonial-wrapper .testimonial-content');
+  const nameElement = document.querySelector('.testimonial-wrapper .testimonial-name');
+  const circleSpans = document.querySelectorAll('.testimonial-wrapper .next-circle span');
+  let currentIndex = 0;
+  let interval;
+
+  function updateTestimonial(index) {
+      // Update content and name
+      contentElement.textContent = testimonials[index].content;
+      nameElement.textContent = testimonials[index].name;
+
+      // Update active span indicator
+      circleSpans.forEach((span, spanIndex) => {
+          span.classList.toggle('active', spanIndex === index);   // toggle --- if(add-class ,true) else(remove-class, false)
+      });
+
+      // Update currentIndex
+      currentIndex = index;
+  }
+
+  function startAutoRotation() {
+      interval = setInterval(() => {
+          const nextIndex = (currentIndex + 1) % testimonials.length;
+          updateTestimonial(nextIndex);
+      }, 4000);
+  }
+
+  // Initialize display and auto-rotation
+  updateTestimonial(currentIndex);
+  startAutoRotation();
+
+  // Event listeners for clicking on spans to manually navigate
+  circleSpans.forEach((span, index) => {
+      span.addEventListener('click', () => {
+          clearInterval(interval); // Stop auto-rotation
+          updateTestimonial(index); // Show the clicked testimonial
+          startAutoRotation(); // Restart auto-rotation
+      });
+  });
+});
+
+
+// !--------------------------------------------------------------------------------
+// Page - Up
+document.addEventListener("DOMContentLoaded", () => {
+  const pageUp = document.querySelector(".page-up");
+
+  if (!pageUp) {
+    console.error("Error: .page-up element not found in the DOM");
+    return;
+  }
+
+  window.addEventListener("scroll", () => {
+  //   console.log("Current Scroll Position (window.scrollY):", window.scrollY); 
+    if (window.scrollY >= 120) {  // Ensure visibility after 120px
+      pageUp.classList.add("show");
+      // console.log("page-up is now visible!"); 
+    } else {
+      pageUp.classList.remove("show");
+      // console.log("page-up is hidden!"); 
+    }
+  });
+
+  pageUp.addEventListener("click", (e) => {
+    e.preventDefault();
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  });
+});  
